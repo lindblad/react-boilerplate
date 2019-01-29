@@ -5,10 +5,8 @@
  */
 import React from 'react';
 import { Helmet } from 'react-helmet';
-import { FormattedMessage } from 'react-intl';
 
 import H1 from 'components/H1';
-import messages from './messages';
 import List from './List';
 import ListItem from './ListItem';
 import ListItemTitle from './ListItemTitle';
@@ -30,52 +28,51 @@ export default class FeaturePage extends React.Component {
             content="Feature page of React.js Boilerplate application"
           />
         </Helmet>
-        <H1>
-          <FormattedMessage {...messages.header} />
-        </H1>
+        <H1>Features</H1>
         <List>
           <ListItem>
-            <ListItemTitle>
-              <FormattedMessage {...messages.scaffoldingHeader} />
-            </ListItemTitle>
+            <ListItemTitle>Quick scaffolding</ListItemTitle>
             <p>
-              <FormattedMessage {...messages.scaffoldingMessage} />
+              Automate the creation of components, containers, routes, selectors
+              and sagas - and their tests - right from the CLI!
+            </p>
+          </ListItem>
+
+          <ListItem>
+            <ListItemTitle>Instant feedback</ListItemTitle>
+            <p>
+              Enjoy the best DX and code your app at the speed of thought! Your
+              saved changes to the CSS and JS are reflected instantaneously
+              without refreshing the page. Preserve application state even when
+              you update something in the underlying code!
+            </p>
+          </ListItem>
+
+          <ListItem>
+            <ListItemTitle>Industry-standard routing</ListItemTitle>
+            <p>
+              Write composable CSS that&apos;s co-located with your components
+              for complete modularity. Unique generated class names keep the
+              specificity low while eliminating style clashes. Ship only the
+              styles that are on the page for the best performance.
+            </p>
+          </ListItem>
+
+          <ListItem>
+            <ListItemTitle>Offline-first</ListItemTitle>
+            <p>
+              The next frontier in performant web apps: availability without a
+              network connection from the instant your users load the app.
             </p>
           </ListItem>
 
           <ListItem>
             <ListItemTitle>
-              <FormattedMessage {...messages.feedbackHeader} />
+              Complete i18n Standard Internationalization & Pluralization
             </ListItemTitle>
             <p>
-              <FormattedMessage {...messages.feedbackMessage} />
-            </p>
-          </ListItem>
-
-          <ListItem>
-            <ListItemTitle>
-              <FormattedMessage {...messages.routingHeader} />
-            </ListItemTitle>
-            <p>
-              <FormattedMessage {...messages.routingMessage} />
-            </p>
-          </ListItem>
-
-          <ListItem>
-            <ListItemTitle>
-              <FormattedMessage {...messages.networkHeader} />
-            </ListItemTitle>
-            <p>
-              <FormattedMessage {...messages.networkMessage} />
-            </p>
-          </ListItem>
-
-          <ListItem>
-            <ListItemTitle>
-              <FormattedMessage {...messages.intlHeader} />
-            </ListItemTitle>
-            <p>
-              <FormattedMessage {...messages.intlMessage} />
+              Scalable apps need to support multiple languages, easily add and
+              support multiple languages with `react-intl`.
             </p>
           </ListItem>
         </List>
