@@ -65,16 +65,6 @@ export default class FeaturePage extends React.Component {
               network connection from the instant your users load the app.
             </p>
           </ListItem>
-
-          <ListItem>
-            <ListItemTitle>
-              Complete i18n Standard Internationalization & Pluralization
-            </ListItemTitle>
-            <p>
-              Scalable apps need to support multiple languages, easily add and
-              support multiple languages with `react-intl`.
-            </p>
-          </ListItem>
         </List>
       </div>
     );
