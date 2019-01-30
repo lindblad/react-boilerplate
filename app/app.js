@@ -12,13 +12,13 @@ import '@babel/polyfill';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
-import { ConnectedRouter } from 'connected-react-router/immutable';
 import FontFaceObserver from 'fontfaceobserver';
 import history from 'utils/history';
 import 'sanitize.css/sanitize.css';
 
-// Import root app
-import App from 'containers/App';
+import { BrowserRouter } from 'react-router-dom';
+import { renderRoutes } from 'react-router-config';
+import routes from 'react-router-config-loader?componentsDir=../app!yaml-loader!../common/router.config.yaml';
 
 // Load the favicon and the .htaccess file
 import '!file-loader?name=[name].[ext]!./images/favicon.ico';
@@ -42,9 +42,7 @@ const MOUNT_NODE = document.getElementById('app');
 
 ReactDOM.render(
   <Provider store={store}>
-    <ConnectedRouter history={history}>
-      <App />
-    </ConnectedRouter>
+    <BrowserRouter>{renderRoutes(routes)}</BrowserRouter>
   </Provider>,
   MOUNT_NODE,
 );

@@ -1,0 +1,11 @@
+- component: ./containers/App
+  routes:
+    - component: ./containers/HomePage/Loadable
+      componentName: HomePage
+      path: /
+      exact: true
+    - component: ./containers/FeaturePage/Loadable
+      componentName: FeaturePage
+      path: /features
+    - component: ./containers/NotFoundPage/Loadable
+      componentName: NotFoundPage
