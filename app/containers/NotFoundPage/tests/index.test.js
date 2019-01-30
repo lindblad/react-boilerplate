@@ -11,6 +11,6 @@ import NotFound from '../index';
 describe('<NotFound />', () => {
   it('should render the Page Not Found text', () => {
     const renderedComponent = shallow(<NotFound />);
-    expect(renderedComponent.contains(<H1>Features</H1>)).toEqual(true);
+    expect(renderedComponent.contains(<H1>Page not found.</H1>)).toEqual(true);
   });
 });

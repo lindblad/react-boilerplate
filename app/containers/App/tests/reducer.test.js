@@ -1,19 +1,17 @@
-import { fromJS } from 'immutable';
-
 import appReducer from '../reducer';
 import { loadRepos, reposLoaded, repoLoadingError } from '../actions';
 
 describe('appReducer', () => {
   let state;
   beforeEach(() => {
-    state = fromJS({
+    state = {
       loading: false,
       error: false,
       currentUser: false,
-      userData: fromJS({
+      userData: {
         repositories: false,
-      }),
-    });
+      },
+    };
   });
 
   it('should return the initial state', () => {
@@ -22,10 +20,12 @@ describe('appReducer', () => {
   });
 
   it('should handle the loadRepos action correctly', () => {
-    const expectedResult = state
-      .set('loading', true)
-      .set('error', false)
-      .setIn(['userData', 'repositories'], false);
+    const expectedResult = {
+      ...state,
+      loading: true,
+      error: false,
+      userData: { ...state.userData, repositories: false },
+    };
 
     expect(appReducer(state, loadRepos())).toEqual(expectedResult);
   });
@@ -37,10 +37,12 @@ describe('appReducer', () => {
       },
     ];
     const username = 'test';
-    const expectedResult = state
-      .setIn(['userData', 'repositories'], fixture)
-      .set('loading', false)
-      .set('currentUser', username);
+    const expectedResult = {
+      ...state,
+      userData: { ...state.userData, repositories: fixture },
+      loading: false,
+      currentUser: username,
+    };
 
     expect(appReducer(state, reposLoaded(fixture, username))).toEqual(
       expectedResult,
@@ -51,7 +53,7 @@ describe('appReducer', () => {
     const fixture = {
       msg: 'Not found',
     };
-    const expectedResult = state.set('error', fixture).set('loading', false);
+    const expectedResult = { ...state, error: fixture, loading: false };
 
     expect(appReducer(state, repoLoadingError(fixture))).toEqual(
       expectedResult,

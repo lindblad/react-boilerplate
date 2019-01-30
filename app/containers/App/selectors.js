@@ -35,7 +35,7 @@ const makeSelectRepos = () =>
 const makeSelectLocation = () =>
   createSelector(
     selectRouter,
-    routerState => routerState.get('location').toJS(),
+    routerState => routerState.location,
   );
 
 export {
