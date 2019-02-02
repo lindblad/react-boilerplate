@@ -9,10 +9,10 @@ module.exports = {
   ],
   coverageThreshold: {
     global: {
-      statements: 98,
-      branches: 91,
-      functions: 98,
-      lines: 98,
+      statements: 78,
+      branches: 71,
+      functions: 78,
+      lines: 78,
     },
   },
   moduleDirectories: ['node_modules', 'app'],
